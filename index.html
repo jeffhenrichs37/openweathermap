@@ -5,37 +5,88 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="app.js" defer></script>
 </head>
 <body>
 
-	<button id="button">Get weather</button>
+	<div id="input">
+		<h1>Daily Weather Forecast</h1>
+		<h5>(Only available for United States and their subdivisions)</h5>
+		<br>
+		<input type="text" id="city" placeholder="City Name">
+		<br><br>
+
+		<select name="state" id="state">
+			<option value="al">Alabama</option>
+			<option value="ak">Alaska</option>
+			<option value="az">Arizona</option>
+			<option value="ar">Arkansas</option>
+			<option value="as">American Samoa</option>
+			<option value="ca">California</option>
+			<option value="co">Colorado</option>
+			<option value="ct">Connecticut</option>
+			<option value="de">Delaware</option>
+			<option value="dc">District of Columbia</option>
+			<option value="fl">Florida</option>
+			<option value="ga">Georgia</option>
+			<option value="gu">Guam</option>
+			<option value="hi">Hawaii</option>
+			<option value="id">Idaho</option>
+			<option value="il">Illinois</option>
+			<option value="in">Indiana</option>
+			<option value="ia">Iowa</option>
+			<option value="ks">Kansas</option>
+			<option value="ky">Kentucky</option>
+			<option value="la">Louisiana</option>
+			<option value="me">Maine</option>
+			<option value="md" selected>Maryland</option>
+			<option value="ma">Massachusetts</option>
+			<option value="mi">Michigan</option>
+			<option value="mn">Minnesota</option>
+			<option value="ms">Mississippi</option>
+			<option value="mo">Missouri</option>
+			<option value="mt">Montana</option>
+			<option value="ne">Nebraska</option>
+			<option value="nv">Nevada</option>
+			<option value="nh">New Hampshire</option>
+			<option value="nj">New Jersey</option>
+			<option value="nm">New Mexico</option>
+			<option value="ny">New York</option>
+			<option value="nc">North Carolina</option>
+			<option value="nd">North Dakota</option>
+			<option value="mp">Northern Mariana Islands</option>
+			<option value="oh">Ohio</option>
+			<option value="ok">Oaklahoma</option>
+			<option value="or">Oregon</option>
+			<option value="pa">Pennsylvania</option>
+			<option value="pr">Puerto Rico</option>
+			<option value="ri">Rhode Island</option>
+			<option value="sc">South Carolina</option>
+			<option value="sd">South Dakota</option>
+			<option value="tn">Tennessee</option>
+			<option value="tx">Texas</option>
+			<option value="um">U.S. Minor Outlying Islands</option>
+			<option value="ut">Utah</option>
+			<option value="vt">Vermont</option>
+			<option value="va">Virginia</option>
+			<option value="vi">U.S. Virign Islands</option>
+			<option value="wa">Washington</option>
+			<option value="wv">West Virginia</option>
+			<option value="wi">Wisconsin</option>
+			<option value="wy">Wyoming</option>
+		</select>
+		<br><br>
+		<button id="enter">Enter</button>
+
+	</div>
 
 	<div id="output"></div>
+
 	<script>
-		document.getElementById('button').addEventListener('click', getWeather);
 
-		function getWeather() {
-			fetch('http://api.openweathermap.org/data/2.5/weather?q=Edgewood&units=imperial&appid=635d9b0c3316e8567568637146fb5fbe')
-			.then((res) => res.json())
-			.then((data) => {
-
-				console.log(data)
-				var output = '<ul style="list-style: none">' +
-					'<li>Weather: '+data.weather[0].main+'</li>' +
-					'<li>Description: '+data.weather[0].description+'</li>' +
-					'<li>High: '+data.main.temp_max+' F</li>' +
-					'<li>Low: '+data.main.temp_min+' F</li>' +
-					'<li>Current: '+data.main.temp+' F</li>' +
-					'<li>Feels Like: '+data.main.feels_like+' F</li>' +
-					'<li>Humdity: '+data.main.humidity+'%</li>'
-					'<li>Wind: '+data.wind.speed+' knots</li>' +
-					'</ul>';
-
-				document.getElementById('output').innerHTML = output;
-			})
-			.catch((err) => console.log(err))
-		}
+		
+		
 	</script>
 </body>
 </html>
