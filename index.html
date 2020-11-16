@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="app.js" defer></script>
-	<!-- <script src="serve.js" defer></script> -->
 </head>
 <body>
 
@@ -15,7 +14,7 @@
 		<h1>Daily Weather Forecast</h1>
 		<h5>(Only available for United States and their subdivisions)</h5>
 		<br>
-		<input type="text" id="city" placeholder="City Name">
+		<input type="text" id="city" placeholder="City Name" required>
 		<br><br>
 
 		<select name="state" id="state">
@@ -76,7 +75,9 @@
 			<option value="wv">West Virginia</option>
 			<option value="wi">Wisconsin</option>
 			<option value="wy">Wyoming</option>
-		</select>
+		</select required>
+		<br><br>
+		<input type="number" name="zipcode" id="zipcode" placeholder="Zip Code" required="">
 		<br><br>
 		<button id="enter">Enter</button>
 
@@ -84,11 +85,6 @@
 
 	<div id="output"></div>
 
-	<script>
-
-		
-		
-	</script>
 </body>
 </html>
 
